@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:5000';
+const apiUrl: string = 'http://localhost:5000';
 
 class APIclass {
     find() {
@@ -11,7 +11,7 @@ class APIclass {
             })
     }
 
-    add(data) {
+    add(data: Object) {
         return fetch(`${apiUrl}/new_campaign`, {
             method: 'POST',
             headers: {
@@ -25,4 +25,4 @@ class APIclass {
     }
 }
 
-module.exports = new APIclass()
+export default new APIclass()
