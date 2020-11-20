@@ -1,72 +1,23 @@
-# Getting Started with Create React App
+# The task was to develop a simple UI listing the available campaigns & allow to create a new one.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To develop the interface I used React with Hooks, Material-UI & Typescript with Javascript.
 
-## Available Scripts
+The interface has two functions:
+- to list the table of campaigns (using Material-UI Data Grid) and shows as many campaigns as possible in the viewport. 
+To achieve that the autoPageSize prop is passed to Data Grid (allows to auto-scale the pageSize to match the container height and the max number of rows that can be displayed without a vertical scroll bar).
 
-In the project directory, you can run:
+- to add new campaigns in a simple modal with validation on the input of name(required) to prevent users from creating “invalid” campaigns.
 
-### `npm start`
+Alert is shown on errors with API calls.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To avoid CORS error on localhost start chrome: google-chrome --disable-web-security --user-data-dir="D:\chrome"
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# API (provided) 
+Attached is a small server written in Python that serves the “static” directory and exposes 2 APIs managing an internal campaign bidding system.
 
-### `npm test`
+Change the Python APIs where necessary.
+a. “/campaigns”: returns a json array of all the campaigns
+b. “/new_campaign”:POST json to create a new campaigns
+c. Start the server and go to “ http://localhost:5000/index.html ”
+The output should be a working server, if any code was compiled, provide the source & the compiled version.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-For local dev: google-chrome --disable-web-security --user-data-dir="D:\chrome"

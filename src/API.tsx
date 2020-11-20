@@ -5,10 +5,7 @@ class APIclass {
         return fetch(`${apiUrl}/campaigns`, {
             method: 'GET',
         })
-            .then((response) => response.json())
-            .catch(err => {
-                console.log('error', err)
-            })
+        .then((response) => response.json()).then(response => response.sort((a: any, b: any) => a.id < b.id ? 1 : -1))
     }
 
     add(data: Object) {
@@ -19,9 +16,12 @@ class APIclass {
             },
             body: JSON.stringify(data),
         })
-            .then((response) => response.json())
-            .then(res => res.data)
-            .catch(err => console.log(err))
+            .then((response: any) => {
+                return response.json().then((response: any) => {
+                    if (!response.ok) return Promise.reject(response.error)
+                    else return Promise.resolve()
+                })
+            })
     }
 }
 
